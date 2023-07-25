@@ -5,7 +5,7 @@
 }
 body {
     margin: none a;
-    background-color: #031920;
+    background-color: #1d1d1d;
     
 }
 
@@ -62,11 +62,16 @@ input:hover {
     box-shadow: 0 0.5em 0.5em -0.4em hwb(34 18% 7%);
 }
 
-button {
+.play_btn {
     background: none;
     border: none;
-    width: 1.5em;
-    height: 1.5em;
+    border-radius: 50%;
+    /* width: 1.5em;
+    height: 1.5em; */
+}
+
+.play_btn:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em hwb(34 18% 7%);
 }
 
 #display {

@@ -1,24 +1,55 @@
 // Take parameters for practice
 
-const activeTime
-const breakTime
-const sets
-const pauseTime
-const blocks
-const keepWorkingTime = 5 mins
+const activeTime = document.querySelector('#active')
+// const breakTime
+// const sets
+// const pauseTime
+// const blocks
+// const keepWorkingTime = 5 mins
 
-let timerElement = document.getElementById('timer');
-
+let timerSeconds = document.querySelector('#timer_seconds');
+let timerMinutes = document.querySelector('#timer_miutes');
+let play = document.querySelector('button')
 
 // When play button clicked  
     // Start Timer
-        (function (){    
-            let sec = 0;
-            timer = setInterval(()=>{
-                timerElement.innerHTML = '00:'+sec;
-                sec++;
-            }, 1000) // each 1 second
-            })()
+    const startBtn = document.querySelector('#startBtn')
+    startBtn.addEventListener('click', () => {
+        console.log('clicked')
+        startTimer();
+        console.log(activeTime.value)
+      
+    })
+        
+    function startTimer(activeTime.value) {   
+        let sec = 0;
+        let min = 0;
+        timer = setInterval(()=>{
+            
+                console.log("timer") 
+            console.log(activeTime)
+            if (min < activeTime)
+            {
+                console.log("timer") 
+                timerMinutes.innerHTML = min; 
+                console.log(min)
+                if (sec < 60){
+                    timerSeconds.innerHTML = sec;
+                    sec++;
+                    console.log(sec)
+                }
+                else
+                {    
+                    min ++;
+                    sec = 0;
+                }
+            }
+            else
+            { 
+                clearInterval(timer)
+            }
+        }, 1000) // each 1 second
+        } 
             
         // Manipulate element of timer show
         // Timer function (activeTime)
