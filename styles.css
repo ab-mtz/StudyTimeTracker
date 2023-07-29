@@ -1,14 +1,23 @@
 * {
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     
     color: hsl(83, 100%, 96%);
 }
+
 body {
-    margin: none;
-    background-color: #1d1d1d;
     
+    background-color: #000000; 
 }
 
+#card {
+    background-color: #1d1d1d; 
+
+}
+
+intput {
+    background-color: #1d1d1d;
+}
+/*
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -27,14 +36,14 @@ h3 {
     margin-top: 1.3rem;;
     display: flex;
     flex-direction: column;
-    /* align-content: left;  */
+    /* align-content: left;  
 }
 
 p { 
     
     text-align: center;
     margin: 0rem 0.3rem;
-    /* font-size: 1.1rem;*/
+    /* font-size: 1.1rem;
     padding: 0.5rem 1rem; 
 } 
 
@@ -46,7 +55,7 @@ input {
     width: 180px;
     margin: 0.5rem 1rem;
     padding: 1rem;
-    /* opacity: 0.8; */
+    /* opacity: 0.8; 
     border-radius: 1.5rem;
     border:none;
     text-align: center;
@@ -67,7 +76,7 @@ input:hover {
     border: none;
     border-radius: 50%;
     /* width: 1.5em;
-    height: 1.5em; */
+    height: 1.5em; 
 }
 
 .play_btn:hover {
@@ -78,7 +87,7 @@ input:hover {
     margin-top: 1.3rem;;
     display: flex;
     flex-direction: column;
-    /* align-content: left;  */
+    /* align-content: left;  
 }
 
 .times {
@@ -91,4 +100,4 @@ input:hover {
     border-radius: 1.5rem;
     border:none;
     text-align: center;
-}
+} */
