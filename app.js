@@ -21,7 +21,7 @@ let play = document.querySelector('button')
       
     })
         
-    function startTimer(activeTime.value) {   
+    function startTimer() {   
         let sec = 0;
         let min = 0;
         timer = setInterval(()=>{
