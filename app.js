@@ -14,11 +14,17 @@ let play = document.querySelector('button')
 // When play button clicked  
     // Start Timer
     const startBtn = document.querySelector('#startBtn')
+    const pauseBtn = document.querySelector('#pauseBtn')
+
     startBtn.addEventListener('click', () => {
         console.log('clicked')
         startTimer();
         console.log(activeTime.value)
       
+    })
+
+    pauseBtn.addEventListener('click' , () => {
+        alert("Pause")
     })
         
     const startTimer = function () {   
@@ -36,7 +42,11 @@ let play = document.querySelector('button')
            
             if (min < activeTime.value)
             {             
-               sec++; 
+               sec++;
+               if (sec > 59){
+                min ++;
+                sec = 0;
+                }               
                 if (min < 10){
                     timerMinutes.textContent =  `0${min}`; 
                 }
@@ -52,13 +62,12 @@ let play = document.querySelector('button')
                 }
                 console.log(sec)
                             
-                if (sec > 59){
-                    min ++;
-                    sec = 0;
-                }
+               
             }
             else
             { 
+                alert("Time is over")
+                // Question if want to continue or if want to take the pause
                 clearInterval(timer)
             }
         }, 1000) // each 1 second
