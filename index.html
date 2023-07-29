@@ -25,37 +25,19 @@
                                 Pattern of study
                                
                                 <section id="interface" name="interface">
-                                    <p>
-                                        <label>Active time</label>
-                                    </p>
-                                    <p>
-                                        <input class="input is-warning is-rounded has-text-white-ter" id="active" name="active" type="number" autofocus placeholder="mins" step="5" required min="5" max="60">
-                                    </p>
-                                    <p>
-                                        <label>Break time</label>
-                                    </p>
-                                    <p>
-                                        <input class="input is-warning is-rounded has-text-white-ter" id="break" name="break" type="number" step="5" required min="5" max="60">
-                                    </p>
-                                    <p>
-                                        <label>x times</label>
-                                    </p>
-                                    <p>
-                                        <input class="input is-warning is-rounded has-text-white-ter" id="times" name="times" type="number" step="1" required min="1" max="50">
-                                    </p>
-                                    <p>
-                                        <label>Pause time</label>
-                                    </p>
-                                    <p>
-                                        <input class="input is-warning is-rounded has-text-white-ter" id="pause" name="pause" type="number" step="5" required min="5" max="60">
-                                    </p>
+                                    <p><label>Active time</label></p>
+                                    <p><input class="input is-warning is-rounded is-half " id="active" name="active" type="number" autofocus placeholder="mins" step="5" required min="5" max="60"></p>
+                                    <p><label>Break time</label></p>
+                                    <p><input class="input is-warning is-rounded " id="break" name="break" type="number" step="5" required min="5" max="60"></p>
+                                    <p><label>x times</label></p>
+                                    <p><input class="input is-warning is-rounded " id="times" name="times" type="number" step="1" required min="1" max="50"></p>
+                                    <p><label>Pause time</label></p>
+                                    <p><input class="input is-warning is-rounded " id="pause" name="pause" type="number" step="5" required min="5" max="60"></p>
                                 
                                     <footer class="card-footer">
                                         <p class="card-footer-item">
                                             <label>Total Time:</label>
-                                            <span id="timer_minutes" class="timer_minutes"> --</span>
-                                            <span>:</span>
-                                            <span id="timer_seconds" class="timer_seconds"> --</span>
+                                            
                                         </p>
                                         <p class="card-footer-item">
                                             <button type="button" class="button is is-warning is-rounded is-hovered" id="startBtn">
@@ -72,6 +54,16 @@
                                 </p> 
                                 </section>
                             </div>
+                        </div>
+                        <div id="timerActive" class="card">
+                            <div class="card-content">
+                                <h1 class="title">
+                                    <span id="timer_minutes" class="timer_minutes"> --</span>
+                                    <span>:</span>
+                                    <span id="timer_seconds" class="timer_seconds"> --</span>
+                                </h1>
+                               
+                            </div> 
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ const activeTime = document.querySelector('#active')
 // const keepWorkingTime = 5 mins
 
 let timerSeconds = document.querySelector('#timer_seconds');
-let timerMinutes = document.querySelector('#timer_miutes');
+let timerMinutes = document.querySelector('#timer_minutes');
 let play = document.querySelector('button')
 
 // When play button clicked  
@@ -21,25 +21,38 @@ let play = document.querySelector('button')
       
     })
         
-    function startTimer() {   
+    const startTimer = function () {   
         let sec = 0;
         let min = 0;
+        if(!activeTime.value)
+        {
+            alert("Fill the fields")
+            return;
+        }
         timer = setInterval(()=>{
             
                 console.log("timer") 
-            console.log(activeTime)
-            if (min < activeTime)
-            {
-                console.log("timer") 
-                timerMinutes.innerHTML = min; 
-                console.log(min)
-                if (sec < 60){
-                    timerSeconds.innerHTML = sec;
-                    sec++;
-                    console.log(sec)
+            // console.log(activeTime)
+           
+            if (min < activeTime.value)
+            {             
+               sec++; 
+                if (min < 10){
+                    timerMinutes.textContent =  `0${min}`; 
                 }
-                else
-                {    
+                else{
+                    timerMinutes.innerHTML = min; 
+                }
+                console.log(min)
+                if (sec < 10){
+                    timerSeconds.innerHTML =  `0${sec}`; 
+                }
+                else{
+                    timerSeconds.innerHTML = sec;
+                }
+                console.log(sec)
+                            
+                if (sec > 59){
                     min ++;
                     sec = 0;
                 }
