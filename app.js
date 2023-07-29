@@ -25,6 +25,7 @@ let play = document.querySelector('button')
 
     pauseBtn.addEventListener('click' , () => {
         alert("Pause")
+        // How to pause???
     })
         
     const startTimer = function () {   
