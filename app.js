@@ -1,18 +1,48 @@
 // Take parameters for practice
 
 const activeTime = document.querySelector('#active')
-// const breakTime
-// const sets
-// const pauseTime
+const breakTime = document.querySelector('#breakTime')
+const sets = document.querySelector('#sets')
+const pauseTime = document.querySelector('#pauseTime')
 // const blocks
 // const keepWorkingTime = 5 mins
 
+
+//Total Time display
+const totalHours = document.querySelector('#totalHours')
+const totalMinutes = document.querySelector('#totalMinutes')
+
+let activeTimeMins = activeTime.value;
+let breakTimeMins = breakTime.value;
+let setsVal = sets.value;
+
+
+// Timer display
 let displaySeconds = document.querySelector('#timer_seconds');
 let displayMinutes = document.querySelector('#timer_minutes');
 let play = document.querySelector('button')
 
-// When play button clicked  
-    // Start Timer
+
+// WORKING AREA: -event listeners. -update total time display -Figure out function to update it
+// Display
+activeTime.addEventListener('change', () => {
+    displayMinutes.innerHTML = activeTime.value;
+    displaySeconds.innerHTML = "00";
+})
+
+breakTime.addEventListener('change', () => {
+
+})
+
+
+ 
+
+function totalTime (activeTimeMins, breakTimeMins, setsVal) {
+    totalTime = (activeTimeMins + breakTimeMins)*setsVal;
+    totalHours.innerHTML = ""
+}
+
+// Start Timer
     const startBtn = document.querySelector('#startBtn')
     const pauseBtn = document.querySelector('#pauseBtn')
 
