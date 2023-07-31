@@ -7,8 +7,8 @@ const activeTime = document.querySelector('#active')
 // const blocks
 // const keepWorkingTime = 5 mins
 
-let timerSeconds = document.querySelector('#timer_seconds');
-let timerMinutes = document.querySelector('#timer_minutes');
+let displaySeconds = document.querySelector('#timer_seconds');
+let displayMinutes = document.querySelector('#timer_minutes');
 let play = document.querySelector('button')
 
 // When play button clicked  
@@ -49,17 +49,17 @@ let play = document.querySelector('button')
                 sec = 0;
                 }               
                 if (min < 10){
-                    timerMinutes.textContent =  `0${min}`; 
+                    displayMinutes.textContent =  `0${min}`; 
                 }
                 else{
-                    timerMinutes.innerHTML = min; 
+                    displayMinutes.innerHTML = min; 
                 }
                 console.log(min)
                 if (sec < 10){
-                    timerSeconds.innerHTML =  `0${sec}`; 
+                    displaySeconds.innerHTML =  `0${sec}`; 
                 }
                 else{
-                    timerSeconds.innerHTML = sec;
+                    displaySeconds.innerHTML = sec;
                 }
                 console.log(sec)
                             
