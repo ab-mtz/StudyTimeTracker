@@ -25,6 +25,9 @@ let play = document.querySelector('button')
 
 // WORKING AREA: -event listeners. -update total time display -Figure out function to update it
 // Display
+
+//Event Listeners
+
 activeTime.addEventListener('change', () => {
     displayMinutes.innerHTML = activeTime.value;
     displaySeconds.innerHTML = "00";
@@ -48,36 +51,37 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
 
     startBtn.addEventListener('click', () => {
         console.log('clicked')
-        startTimer();
+        startTimer(activeTime.value);
         console.log(activeTime.value)
       
     })
 
-    pauseBtn.addEventListener('click' , () => {
+    pauseBtn.addEventListener('click', () => {
         alert("Pause")
-        // How to pause???
     })
         
-    const startTimer = function () {   
-        let sec = 0;
-        let min = 0;
-        if(!activeTime.value)
-        {
-            alert("Fill the fields")
-            return;
-        }
+    
+    
+    const startTimer = function (time) {   
+               
+        let min = time;
+        let sec = 60;
+        console.log(min) 
+        min--;
+        // TIMER
         timer = setInterval(()=>{
             
-                console.log("timer") 
-            // console.log(activeTime)
-           
-            if (min < activeTime.value)
+            console.log("timer") 
+
+            if (min >= 0)
             {             
-               sec++;
-               if (sec > 59){
-                min ++;
-                sec = 0;
+               sec--;
+               if (sec === 0){
+                    min --;
+                    sec = 60;
                 }               
+                                
+                //Display
                 if (min < 10){
                     displayMinutes.textContent =  `0${min}`; 
                 }
@@ -92,8 +96,6 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
                     displaySeconds.innerHTML = sec;
                 }
                 console.log(sec)
-                            
-               
             }
             else
             { 
