@@ -38,7 +38,7 @@ breakTime.addEventListener('change', () => {
 })
 
 
- 
+
 
 function totalTime (activeTimeMins, breakTimeMins, setsVal) {
     totalTime = (activeTimeMins + breakTimeMins)*setsVal;
@@ -62,7 +62,7 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
         
     
     
-    const startTimer = function (time) {   
+    function startTimer (time) {   
                
         let min = time;
         let sec = 60;
