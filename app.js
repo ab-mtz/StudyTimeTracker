@@ -46,66 +46,79 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
 }
 
 // Start Timer
+
     const startBtn = document.querySelector('#startBtn')
     const pauseBtn = document.querySelector('#pauseBtn')
 
-    startBtn.addEventListener('click', () => {
+    let time = 1;
+
+    startBtn.addEventListener('click', (time) => {
         console.log('clicked')
-        startTimer(activeTime.value);
-        console.log(activeTime.value)
+        startTimer(time);
       
     })
 
     pauseBtn.addEventListener('click', () => {
-        alert("Pause")
+        console.log("Pause")
+        pauseTimer(time);
     })
         
-    
-    
-    function startTimer (time) {   
-               
-        let min = time;
-        let sec = 60;
-        console.log(min) 
-        min--;
-        // TIMER
-        timer = setInterval(()=>{
-            
-            console.log("timer") 
+   
+    let interval = null;
+    let sec = 0;
 
-            if (min >= 0)
-            {             
-               sec--;
-               if (sec === 0){
-                    min --;
-                    sec = 60;
-                }               
-                                
-                //Display
-                if (min < 10){
-                    displayMinutes.textContent =  `0${min}`; 
-                }
-                else{
-                    displayMinutes.innerHTML = min; 
-                }
-                console.log(min)
-                if (sec < 10){
-                    displaySeconds.innerHTML =  `0${sec}`; 
-                }
-                else{
-                    displaySeconds.innerHTML = sec;
-                }
-                console.log(sec)
+    // Update timer   
+    function timer () { //setInterval(() => {
+        
+        console.log("timer") 
+        //Countdown
+        if (time >= 0)
+        {             
+            sec--;
+            if (sec === 0){
+                time --;
+                sec = 60;
+            }               
+                            
+            //Display
+            if (time < 10){
+                displayMinutes.textContent =  `0${time}`; 
             }
-            else
-            { 
-                alert("Time is over")
-                // Question if want to continue or if want to take the pause
-                clearInterval(timer)
+            else{
+                displayMinutes.innerHTML = time; 
             }
-        }, 1000) // each 1 second
-        } 
-            
+            console.log(time)
+            if (sec < 10){
+                displaySeconds.innerHTML =  `0${sec}`; 
+            }
+            else{
+                displaySeconds.innerHTML = sec;
+            }
+            console.log(sec)
+        }
+        else
+        { 
+            alert("Time is over")
+            // Question if want to continue or if want to take the pause Calling a Function
+            clearInterval(timer)
+        }
+    //}, 1000) // each 1 second}
+    }
+
+    function startTimer (time) {   
+        // console.log("Time inside start Timer:", time)
+        min--;
+        sec = 59;
+        if (interval) {
+            return
+        }
+        interval = setInterval(timer, 1000);
+    } 
+
+    function pauseTimer () {
+        clearInterval();
+        interval = null;
+    }
         // Manipulate element of timer show
         // Timer function (activeTime)
         // If activeTime >= 10min 
@@ -125,3 +138,64 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
 
 
 
+//BAck up code
+
+    // const startBtn = document.querySelector('#startBtn')
+    // const pauseBtn = document.querySelector('#pauseBtn')
+
+    // startBtn.addEventListener('click', () => {
+    //     console.log('clicked')
+    //     startTimer(activeTime.value);
+    //     console.log(activeTime.value)
+      
+    // })
+
+    // pauseBtn.addEventListener('click', () => {
+    //     alert("Pause")
+    // })
+        
+    
+    
+    // function startTimer (time) {   
+               
+    //     let min = time;
+    //     let sec = 60;
+    //     console.log(min) 
+    //     min--;
+    //     // TIMER
+    //     timer = setInterval(()=>{
+            
+    //         console.log("timer") 
+
+    //         if (min >= 0)
+    //         {             
+    //            sec--;
+    //            if (sec === 0){
+    //                 min --;
+    //                 sec = 60;
+    //             }               
+                                
+    //             //Display
+    //             if (min < 10){
+    //                 displayMinutes.textContent =  `0${min}`; 
+    //             }
+    //             else{
+    //                 displayMinutes.innerHTML = min; 
+    //             }
+    //             console.log(min)
+    //             if (sec < 10){
+    //                 displaySeconds.innerHTML =  `0${sec}`; 
+    //             }
+    //             else{
+    //                 displaySeconds.innerHTML = sec;
+    //             }
+    //             console.log(sec)
+    //         }
+    //         else
+    //         { 
+    //             alert("Time is over")
+    //             // Question if want to continue or if want to take the pause
+    //             clearInterval(timer)
+    //         }
+    //     }, 1000) // each 1 second
+    //     } 
