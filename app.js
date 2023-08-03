@@ -50,7 +50,7 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
     const startBtn = document.querySelector('#startBtn')
     const pauseBtn = document.querySelector('#pauseBtn')
 
-    let time = 1;
+    let time = 2;
 
     startBtn.addEventListener('click', (time) => {
         console.log('clicked')
@@ -60,7 +60,7 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
 
     pauseBtn.addEventListener('click', () => {
         console.log("Pause")
-        pauseTimer(time);
+        pauseTimer();
     })
         
    
@@ -105,9 +105,9 @@ function totalTime (activeTimeMins, breakTimeMins, setsVal) {
     //}, 1000) // each 1 second}
     }
 
-    function startTimer (time) {   
+    function startTimer () {   
         // console.log("Time inside start Timer:", time)
-        min--;
+        time--;
         sec = 59;
         if (interval) {
             return
